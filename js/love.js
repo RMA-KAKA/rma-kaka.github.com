@@ -6,7 +6,7 @@ function SetTime(){
     var time = $('#time');
     var now = new Date(); 
     var begin = new Date(Date.UTC(2012, 11, 23));
-    time.html("We Have Been Fallen in Love for " + "<font color='#931217'>" + parseInt((now - begin)/1000) + "</font>" + " Seconds,");
+    time.html("We Have Been Fallen in Love for " + "<font color='#931217'>" + parseInt((now - begin) / 1000 / 3600 / 24) + "</font>" + " Days,");
     setTimeout('SetTime()', 500);
 }
 
