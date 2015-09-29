@@ -2,11 +2,26 @@
 var heart = new Array(); 
 var notHeart = new Array();
 
+
+function toBinary(num) {
+  var ret = '';
+  while (num != 0) {
+    ret = num % 2 + ret;
+    num = parseInt(num / 2);
+  }
+  if (ret == '') {
+    return 0;
+  } else {
+    return ret;
+  }
+}
+
 function SetTime(){
     var time = $('#time');
     var now = new Date(); 
     var begin = new Date(Date.UTC(2012, 11, 23));
-    time.html("We Have Been Fallen in Love for " + "<font color='#931217'>" + parseInt((now - begin) / 1000 / 3600 / 24) + "</font>" + " Days,");
+    var diffTime = toBinary(parseInt((now - begin) / 1000 / 3600 / 24));
+    time.html("We Have Been Fallen in Love for " + "<font color='#931217'>" + diffTime  + "</font>" + " Days,");
     setTimeout('SetTime()', 500);
 }
 
